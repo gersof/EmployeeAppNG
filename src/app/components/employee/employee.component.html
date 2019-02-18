@@ -1,39 +1,73 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <form>
-      <div class="form-group">
-        <label for="">Tipo Documento</label>
-        <input type="text" class="form-control" />
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="idDocument">Tipo Documento</label>
+            <input [value]="employee.DocumentType" (input)="employee.DocumentType = $event.target.value" type="number"
+              id="idDocument" type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Número de Documento</label>
+            <input [value]="employee.IdentityCardNumber" (input)="employee.IdentityCardNumber = $event.target.value"
+              type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Primer Nombre</label>
+            <input [value]="employee.FirstName" (input)="employee.FirstName = $event.target.value" type="text"
+              class="form-control" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Segundo Nombre</label>
+            <input [value]="employee.SecondName" (input)="employee.SecondName = $event.target.value" type="text"
+              class="form-control" />
+          </div>
+
+        </div>
+
       </div>
-      <div class="form-group">
-        <label for="">Número de Documento</label>
-        <input type="text" class="form-control" />
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Primer Apellido</label>
+            <input [value]="employee.FirstLastName" (input)="employee.FirstLastName = $event.target.value" type="text"
+              class="form-control" />
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Segundo Apellido</label>
+            <input [value]="employee.SecondLastName" (input)="employee.SecondLastName = $event.target.value" type="text"
+              class="form-control" />
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Salario</label>
+            <input [value]="employee.Salary" (input)="employee.Salary = $event.target.value" type="number"
+              class="form-control" />
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Compañía</label>
+            <input [value]="employee.Company" (input)="employee.Company = $event.target.value" type="text"
+              class="form-control" />
+          </div>
+
+        </div>
       </div>
-      <div class="form-group">
-        <label for="">Primer Nombre</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="">Segundo Nombre</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="">Primer Apellido</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="">Segundo Apellido</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="">Salario</label>
-        <input type="number" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="">Compañía</label>
-        <input type="text" class="form-control" />
-      </div>
-      <button type="submit" class="btn btn-primary">Guardar Empleado</button>
+      <button type="button" (click)="onClickAdd()" class="btn btn-primary">Guardar Empleado</button>
 
     </form>
   </div>
