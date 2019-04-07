@@ -12,6 +12,14 @@ export class EmployeeService {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http.post(this.apiUrl, JSON.stringify(employee), { headers: headers });
   }
+  updateEmployee(employee) {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this._http.put(this.apiUrl+'/'+employee.IdEmployee, JSON.stringify(employee), { headers: headers });
+  }
+  deleteEmployee(idEmployee) {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this._http.delete(this.apiUrl+'/'+idEmployee, { headers: headers });
+  }
   getAllEmployees() {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http.get(this.apiUrl, { headers: headers });

@@ -68,6 +68,7 @@
         </div>
       </div>
       <button type="button" (click)="onClickAdd()" class="btn btn-primary">Guardar Empleado</button>
+      <button type="button" (click)="onClickUpdate()" class="btn btn-primary" >Actualizar Empleado</button>
       <button type="button" (click)="onClickSearch(content)" class="btn btn-primary">Buscar Empleado</button>
     </form>
   </div>
@@ -134,13 +135,16 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let employee of employeeList">
+      <tbody >
+        <tr *ngFor="let employee of employeeList" >
           <td>{{employee.IdEmployee}}</td>
           <td> {{employee.FirstName}} {{employee.SecondName}} {{employee.FistLastName}} {{employee.SecondLastName}}</td>
           <td>{{employee.IdentityCardNumber}}</td>
           <td>{{employee.Salary}}</td>
-          <td></td>
+          <td>
+              <i class="fas fa-trash-alt fa-lg" style="margin-right: 5px; cursor: pointer;" (click)="onClickDelete(employee)"></i>
+              <i class="far fa-edit fa-lg" style="margin-right: 5px; cursor: pointer;" (click)="onClickEdit(employee)"></i>
+          </td>
         </tr>
       </tbody>
     </table>
