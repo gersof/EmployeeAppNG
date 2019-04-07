@@ -86,11 +86,11 @@
             <div class="col-md-6">
               <div class="from-group">
                 <label for="">Id Empleado</label>
-                <input type="text" class="form-control" />
+                <input type="text" [value]="idEmployee" (input)="idEmployee=$event.target.value" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
-              <button type="button" class="btn btn-primary">Buscar Empleado</button>
+              <button type="button" (click)="onClickSearchById()" class="btn btn-primary">Buscar Empleado</button>
             </div>
           </div>
         </ng-template>
@@ -100,17 +100,17 @@
           <p>Buscar por Nombre</p>
         </ng-template>
         <ng-template ngbTabContent>
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="from-group">
-                    <label for="">Nombre Empleado</label>
-                    <input type="text" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-primary">Buscar Empleados</button>
-                </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="from-group">
+                <label for="">Nombre Empleado</label>
+                <input type="text" [value]="nameEmployee" (input)="nameEmployee=$event.target.value" class="form-control" />
               </div>
+            </div>
+            <div class="col-md-6">
+              <button type="button" (click)="onClickSearchByName()" class="btn btn-primary">Buscar Empleados</button>
+            </div>
+          </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab>
@@ -118,8 +118,8 @@
           <p>Buscar Todos</p>
         </ng-template>
         <ng-template ngbTabContent>
-            <button type="button" class="btn btn-primary">Buscar Empleados</button>
-          </ng-template>
+          <button type="button"  (click)="onClickSearchAll()" class="btn btn-primary">Buscar Empleados</button>
+        </ng-template>
       </ngb-tab>
     </ngb-tabset>
     <br />
@@ -134,6 +134,15 @@
           <th></th>
         </tr>
       </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeList">
+          <td>{{employee.IdEmployee}}</td>
+          <td> {{employee.FirstName}} {{employee.SecondName}} {{employee.FistLastName}} {{employee.SecondLastName}}</td>
+          <td>{{employee.IdentityCardNumber}}</td>
+          <td>{{employee.Salary}}</td>
+          <td></td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <div class="modal-footer">
