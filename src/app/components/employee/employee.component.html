@@ -68,7 +68,20 @@
         </div>
       </div>
       <button type="button" (click)="onClickAdd()" class="btn btn-primary">Guardar Empleado</button>
-
+      <button type="button" (click)="onClickSearch(content)" class="btn btn-primary">Buscar Empleado</button>
     </form>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modalheader">
+    <h4 class="modal-title"></h4>
+    <button class="close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <p>Vamos a buscar&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-light" (click)="closeModal()">Close</button>
+  </div>
+</ng-template>
