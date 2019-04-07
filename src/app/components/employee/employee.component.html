@@ -79,7 +79,62 @@
     <button class="close" aria-label="Close" (click)="closeModal()"></button>
   </div>
   <div class="modal-body">
-    <p>Vamos a buscar&hellip;</p>
+    <ngb-tabset>
+      <ngb-tab title="Buscar x Id">
+        <ng-template ngbTabContent>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="from-group">
+                <label for="">Id Empleado</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary">Buscar Empleado</button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle="Buscar x Nombre">
+          <p>Buscar por Nombre</p>
+        </ng-template>
+        <ng-template ngbTabContent>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="from-group">
+                    <label for="">Nombre Empleado</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary">Buscar Empleados</button>
+                </div>
+              </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle="Buscar Todos">
+          <p>Buscar Todos</p>
+        </ng-template>
+        <ng-template ngbTabContent>
+            <button type="button" class="btn btn-primary">Buscar Empleados</button>
+          </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+    <br />
+    <h3 class="text-center">Resultados</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th># CC</th>
+          <th>SALARIO</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
   </div>
   <div class="modal-footer">
     <button class="btn btn-light" (click)="closeModal()">Close</button>
